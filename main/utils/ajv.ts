@@ -20,7 +20,6 @@ const keyboardShortcutValidator = () => {
   };
 };
 
-// eslint-disable-next-line @typescript-eslint/ban-types
 const validators = new Map<string, (parentSchema: object) => object>([
   ['hexColor', hexColorValidator],
   ['keyboardShortcut', keyboardShortcutValidator]
@@ -31,7 +30,6 @@ export default class CustomAjv extends Ajv {
     super(options);
 
     this.addKeyword('customType', {
-      // eslint-disable-next-line @typescript-eslint/ban-types
       macro: (schema: string, parentSchema: object) => {
         const validator = validators.get(schema);
 

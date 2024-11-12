@@ -10,7 +10,6 @@ const getAppMenuItem = () => {
   return {...appMenuItem, id: MenuItemId.app};
 };
 
-// eslint-disable-next-line unicorn/prevent-abbreviations
 export const defaultApplicationMenu = (): MenuOptions => [
   getAppMenuItem(),
   {
@@ -60,7 +59,6 @@ export const defaultApplicationMenu = (): MenuOptions => [
   }
 ];
 
-// eslint-disable-next-line unicorn/prevent-abbreviations
 export const customApplicationMenu = (modifier: (defaultMenu: ReturnType<typeof defaultApplicationMenu>) => void) => {
   const menu = defaultApplicationMenu();
   modifier(menu);

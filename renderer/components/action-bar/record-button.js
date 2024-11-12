@@ -53,7 +53,6 @@ const RecordButton = ({
         javascriptNode.onaudioprocess = () => {
           const array = new Uint8Array(analyser.frequencyBinCount);
           analyser.getByteFrequencyData(array);
-          // eslint-disable-next-line unicorn/no-array-reduce
           const avg = array.reduce((p, c) => p + c) / array.length;
           if (avg >= 36) {
             setShowFirstRipple(true);

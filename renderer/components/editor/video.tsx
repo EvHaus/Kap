@@ -18,7 +18,6 @@ const getVideoProps = (propsArray: Array<React.DetailedHTMLProps<React.VideoHTML
     }
   }
 
-  // eslint-disable-next-line unicorn/no-array-reduce
   return [...handlers.entries()].reduce((acc, [key, handlerList]) => ({
     ...acc,
     [key]: () => {

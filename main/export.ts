@@ -75,7 +75,6 @@ export default class Export extends (EventEmitter as new () => TypedEventEmitter
     private readonly options: ExportOptions,
     private readonly title: string = video.title
   ) {
-    // eslint-disable-next-line constructor-super
     super();
     Export.addExport(this);
     video.generatePreviewImage();

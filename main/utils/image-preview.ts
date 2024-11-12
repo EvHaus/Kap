@@ -1,5 +1,3 @@
-/* eslint-disable array-element-newline */
-
 import {BrowserWindow, dialog} from 'electron';
 import execa from 'execa';
 import tempy from 'tempy';

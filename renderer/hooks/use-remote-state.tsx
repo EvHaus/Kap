@@ -33,7 +33,6 @@ const createRemoteStateHook = <Callback extends RemoteState>(
       (async () => {
         const actionKeys = (await ipcRenderer.callMain<string, string[]>(channelNames.subscribe, id));
 
-        // eslint-disable-next-line unicorn/no-array-reduce
         const actions = actionKeys.reduce((acc, key) => ({
           ...acc,
           [key]: async (...data: any) => ipcRenderer.callMain(channelNames.callAction, {key, data, id})

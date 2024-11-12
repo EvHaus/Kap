@@ -38,7 +38,6 @@ const defaultProcessOptions = {
 const createProcess = (mode: Mode) => {
   const program = modes.get(mode)!;
 
-  // eslint-disable-next-line @typescript-eslint/promise-function-async
   return (outputPath: string, options: ProcessOptions, args: string[]) => {
     const {
       shouldTrack,
@@ -104,7 +103,6 @@ const createProcess = (mode: Mode) => {
 export const convert = createProcess(Mode.convert);
 const compressFunction = createProcess(Mode.compress);
 
-// eslint-disable-next-line @typescript-eslint/promise-function-async
 export const compress = (outputPath: string, options: ProcessOptions, args: string[]) => {
   const useLossy = settings.get('lossyCompression', false);
 

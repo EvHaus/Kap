@@ -1,5 +1,3 @@
-/* eslint-disable array-element-newline */
-
 import path from 'path';
 import execa from 'execa';
 import tempy from 'tempy';

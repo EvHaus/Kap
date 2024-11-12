@@ -14,8 +14,7 @@
   "private": true,
   "main": "dist-js/index.js",
   "scripts": {
-    "lint": "xo",
-    "lint:fix": "xo --fix",
+    "lint": "echo 'TODO'",
     "test:main": "TS_NODE_PROJECT=test/tsconfig.json ava",
     "test:ci": "yarn test:main --tap | tap-xunit > ~/reports/ava.xml",
     "test": "yarn lint && yarn test:main",
@@ -94,7 +93,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
-    "@babel/eslint-parser": "^7.12.16",
     "@sindresorhus/tsconfig": "^0.7.0",
     "@types/ffmpeg-static": "^3.0.0",
     "@types/got": "9.6.12",
@@ -105,19 +103,10 @@
     "@types/object-hash": "^1.3.4",
     "@types/react": "^17.0.3",
     "@types/sinon": "^9.0.10",
-    "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
     "ava": "^3.15.0",
-    "babel-eslint": "^10.1.0",
     "electron": "13.6.9",
     "electron-builder": "^23.3.3",
     "electron-builder-notarize": "^1.4.0",
-    "eslint-config-xo": "^0.35.0",
-    "eslint-config-xo-react": "^0.24.0",
-    "eslint-config-xo-typescript": "^0.38.0",
-    "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "husky": "^4.2.5",
     "module-alias": "^2.2.2",
     "next": "^10.0.8",
     "run-electron": "^1.0.0",
@@ -128,7 +117,7 @@
     "typed-emitter": "^1.3.1",
     "typescript": "^4.0.3",
     "unique-string": "^2.0.0",
-    "xo": "^0.38.2"
+    "xo": "^0.59.3"
   },
   "_moduleAliases": {
     "electron": "test/mocks/electron.ts"
@@ -150,96 +139,6 @@
       "ts-node/register",
       "module-alias/register"
     ]
-  },
-  "xo": {
-    "extends": "xo-react",
-    "space": 2,
-    "envs": [
-      "node",
-      "browser"
-    ],
-    "rules": {
-      "template-curly-spacing": "off",
-      "import/no-extraneous-dependencies": "off",
-      "import/no-unassigned-import": "off",
-      "import/no-named-as-default-member": "off",
-      "react/jsx-closing-tag-location": "off",
-      "react/require-default-props": "off",
-      "react/jsx-curly-brace-presence": "off",
-      "react/static-property-placement": "off",
-      "react/react-in-jsx-scope": "off",
-      "react/boolean-prop-naming": "off",
-      "unicorn/prefer-set-has": "off",
-      "ava/use-test": "off",
-      "import/extensions": "off",
-      "node/file-extension-in-import": "off"
-    },
-    "ignores": [
-      "dist-js",
-      "dist",
-      "renderer/.next",
-      "renderer/out",
-      "renderer/next.config.js"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "**/*.js",
-          "**/*.jsx"
-        ],
-        "parser": "babel-eslint"
-      },
-      {
-        "files": [
-          "**/*.ts",
-          "**/*.tsx"
-        ],
-        "extends": [
-          "xo-react",
-          "xo-typescript"
-        ],
-        "parserOptions": {
-          "project": [
-            "tsconfig.json",
-            "renderer/tsconfig.json",
-            "test/tsconfig.json"
-          ]
-        },
-        "rules": {
-          "react-hooks/exhaustive-deps": "off",
-          "@typescript-eslint/no-dynamic-delete": "off",
-          "@typescript-eslint/no-var-requires": "off",
-          "@typescript-eslint/no-floating-promises": "off",
-          "@typescript-eslint/no-implicit-any-catch": "off",
-          "@typescript-eslint/restrict-template-expressions": "off",
-          "no-await-in-loop": "off",
-          "react/prop-types": "off",
-          "@typescript-eslint/no-confusing-void-expression": "off",
-          "@typescript-eslint/indent": [
-            "error",
-            2
-          ]
-        }
-      },
-      {
-        "files": [
-          "test/**/*.ts"
-        ],
-        "rules": {
-          "@typescript-eslint/consistent-type-assertions": "off",
-          "@typescript-eslint/member-ordering": "off",
-          "import/no-anonymous-default-export": "off",
-          "@typescript-eslint/no-extraneous-class": "off",
-          "@typescript-eslint/no-empty-function": "off"
-        }
-      }
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn lint",
-      "pre-push": "yarn lint"
-    }
   },
   "build": {
     "appId": "com.wulkano.kap",

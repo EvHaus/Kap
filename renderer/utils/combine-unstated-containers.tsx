@@ -4,7 +4,6 @@ import {Container} from 'unstated-next';
 type ContainerOrWithInitialState<T = any> = Container<any, T> | [Container<any, T>, T];
 
 const combineUnstatedContainers = (containers: ContainerOrWithInitialState[]) => ({children}: PropsWithChildren<Record<string, unknown>>) => {
-  // eslint-disable-next-line unicorn/no-array-reduce
   return containers.reduce<React.ReactElement>(
     (tree, ContainerOrWithInitialState) => {
       if (Array.isArray(ContainerOrWithInitialState)) {

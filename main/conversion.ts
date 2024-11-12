@@ -36,7 +36,6 @@ export default class Conversion extends (EventEmitter as new () => TypedEventEmi
     public readonly format: Format,
     public readonly options: ConversionOptions
   ) {
-    // eslint-disable-next-line constructor-super
     super();
 
     this.id = hash({

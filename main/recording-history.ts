@@ -1,4 +1,3 @@
-/* eslint-disable array-element-newline */
 'use strict';
 
 import {shell, clipboard} from 'electron';

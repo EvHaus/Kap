@@ -116,7 +116,6 @@ export const settings = new Store<Settings>({
     },
     shortcuts: {
       type: 'object',
-      // eslint-disable-next-line unicorn/no-array-reduce
       properties: Object.keys(shortcuts).reduce((acc, key) => ({...acc, [key]: shortcutSchema}), {}),
       default: {}
     },
